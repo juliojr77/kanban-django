@@ -1,0 +1,16 @@
+div {
+    /*background-color: lightgrey;*/
+    width: 400px;
+    padding: 5px;
+    border: 1px solid navy;
+    margin: 5px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
