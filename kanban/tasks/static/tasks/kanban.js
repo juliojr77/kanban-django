@@ -9,7 +9,7 @@ $(".my_form").submit(function(e) {
 
           $.ajax({
                   type: 'POST',
-                  url: 'http://127.0.0.1:8000/api/tasks/', //+ button_id,
+                  url: '/api/tasks/', //+ button_id,
 
                   data: form_data,
                   error: function(e) {
@@ -23,10 +23,10 @@ $(".my_form").submit(function(e) {
 //------------------------------------------------------------------------------------------------
 // GET INFO FROM THE API
 // LOOK FOR CONDITIONAL $.GET
-$.get('http://127.0.0.1:8000/api/tasks/', function(data)
+$.get('/api/tasks/', function(data)
 
 {
-  console.log(data)
+  //console.log(data)
 
   //------------------------------------------------------------------------------
   /// PAGE HEADER 2
@@ -37,8 +37,6 @@ $.get('http://127.0.0.1:8000/api/tasks/', function(data)
 
 ///-----------------------------------------------------------------------------------
 /// SHOWING EVERY ITEM PRESENT IN THE API CONTENT
-
-  //$(<p>Input field: </p>);
 
   var results = data['results'];
 
@@ -67,12 +65,11 @@ $.get('http://127.0.0.1:8000/api/tasks/', function(data)
         //console.log(div_class)
 
         $.ajax({
-                url: 'http://127.0.0.1:8000/api/tasks/' + button_id,
+                url: '/api/tasks/' + button_id,
                 type: 'DELETE',
         });
-
+        // $( b_class ).remove();
        $( b_class ).slideUp();
-
 
        count = count - 1;
 
@@ -95,8 +92,8 @@ $.get('http://127.0.0.1:8000/api/tasks/', function(data)
         // Creation of a dictionary using getElementById
         var dict = {title: document.getElementById(input_title).value, status: document.getElementById(input_status).value, priority: document.getElementById(input_priority).value};
         //console.log(dict)
-        // Creation of the specific URL where the data will be modify
-        var g = 'http://127.0.0.1:8000/api/tasks/'+button_id
+        // Creation of the specific URL where the data will be modify the ajax method
+        var g = '/api/tasks/'+button_id
         $.ajax({
             type: 'PUT',
             dataType: 'json',
