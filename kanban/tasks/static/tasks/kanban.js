@@ -22,7 +22,7 @@ $(".my_form").submit(function(e) {
 
 //------------------------------------------------------------------------------------------------
 // GET INFO FROM THE API
-
+// LOOK FOR CONDITIONAL $.GET
 $.get('http://127.0.0.1:8000/api/tasks/', function(data)
 
 {
